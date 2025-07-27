@@ -44,3 +44,17 @@ console.log(secondLargest(arr))
 console.log(smallest(arr))
 
 ///////////////////////////////////////////////////////////////////////////
+
+////////remove duplicates in an aray and return no of non-dup elements
+
+const nonDupArray = (arr) => {
+    let newArr = []
+    for(let i=0; i< arr.length; i++) {
+        if(!newArr.includes(arr[i])) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+console.log(nonDupArray([1, 2, 2, 2, 2, 3, 3]))
