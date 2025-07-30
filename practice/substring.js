@@ -86,3 +86,26 @@ function reverseString(str) {
 }
 
 console.log(reverseString("hello")); // "olleh"
+
+////////////////////////////////////////////////////////////////////////
+
+// most frequent number
+
+function mostFrequent(arr) {
+    const freqMap = {}
+    let maxCount = 0
+    let mostCommon;
+
+    for(let i of arr) {
+        freqMap[i] = (freqMap[i] || 0) + 1;
+
+        if(freqMap[i] > maxCount) {
+            maxCount = freqMap[i]
+            mostCommon = i
+        }
+    }
+
+    return mostCommon
+}
+
+console.log(mostFrequent([1, 3, 1, 3, 3, 2, 1]));
