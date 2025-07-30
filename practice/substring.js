@@ -69,10 +69,20 @@
 
 // Length of last word
 
-function lengthOfLastWord(s) {
-    let words = s.trim().split(" ")
-    return words[words.length-1].length
+// function lengthOfLastWord(s) {
+//     let words = s.trim().split(" ")
+//     return words[words.length-1].length
+// }
+
+// let s = "Hello World     "
+// console.log(lengthOfLastWord(s))
+
+////////////////////////////////////////////////////////////////////////
+
+// Reverse a string
+
+function reverseString(str) {
+    return str.split('').reverse().join('')
 }
 
-let s = "Hello World     "
-console.log(lengthOfLastWord(s))
+console.log(reverseString("hello")); // "olleh"
