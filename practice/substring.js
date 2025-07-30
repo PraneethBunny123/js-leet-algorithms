@@ -33,32 +33,46 @@
 
 // partition labels
 
-function partitionLabels(s) {
+// function partitionLabels(s) {
 
-    let lastIndex = {}
-    let res = []
+//     let lastIndex = {}
+//     let res = []
 
-    for(let i=0; i<s.length; i++) {
-        lastIndex[s[i]] = i
-    }
+//     for(let i=0; i<s.length; i++) {
+//         lastIndex[s[i]] = i
+//     }
 
-    let start = 0;
-    let end = 0;
+//     let start = 0;
+//     let end = 0;
 
-    for(let i=0; i<s.length; i++) {
-        start = start+1
-        end = Math.max(end, lastIndex[s[i]])
+//     for(let i=0; i<s.length; i++) {
+//         start = start+1
+//         end = Math.max(end, lastIndex[s[i]])
 
-        if(i === end) {
-            res.push(start)
-            start = 0
-        }
+//         if(i === end) {
+//             res.push(start)
+//             start = 0
+//         }
 
-    }
+//     }
 
-    return res
+//     return res
+// }
+
+// let s = "eccbbbbdec"
+
+// console.log(partitionLabels(s))
+
+//////////////////////////////////////////////////////////////////
+
+// Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+// Length of last word
+
+function lengthOfLastWord(s) {
+    let words = s.trim().split(" ")
+    return words[words.length-1].length
 }
 
-let s = "eccbbbbdec"
-
-console.log(partitionLabels(s))
+let s = "Hello World     "
+console.log(lengthOfLastWord(s))
