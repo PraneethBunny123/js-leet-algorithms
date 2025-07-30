@@ -35,6 +35,30 @@
 
 function partitionLabels(s) {
 
+    let lastIndex = {}
+    let res = []
+
+    for(let i=0; i<s.length; i++) {
+        lastIndex[s[i]] = i
+    }
+
+    let start = 0;
+    let end = 0;
+
+    for(let i=0; i<s.length; i++) {
+        start = start+1
+        end = Math.max(end, lastIndex[s[i]])
+
+        if(i === end) {
+            res.push(start)
+            start = 0
+        }
+
+    }
+
+    return res
 }
 
-let s = "ababcbacadefegdehijhklij"
+let s = "eccbbbbdec"
+
+console.log(partitionLabels(s))
