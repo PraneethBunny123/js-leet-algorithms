@@ -131,3 +131,15 @@ function twoSum(arr, target) {
 }
 
 console.log(twoSum([2, 7, 11, 15], 9));
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+// palindrome
+
+function isPalindrome(str) {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+
+console.log(isPalindrome("madam"));     // true
+console.log(isPalindrome("hello"));     // false
