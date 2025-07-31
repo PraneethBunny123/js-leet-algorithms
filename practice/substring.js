@@ -81,31 +81,53 @@
 
 // Reverse a string
 
-function reverseString(str) {
-    return str.split('').reverse().join('')
-}
+// function reverseString(str) {
+//     return str.split('').reverse().join('')
+// }
 
-console.log(reverseString("hello")); // "olleh"
+// console.log(reverseString("hello")); // "olleh"
 
 ////////////////////////////////////////////////////////////////////////
 
 // most frequent number
 
-function mostFrequent(arr) {
-    const freqMap = {}
-    let maxCount = 0
-    let mostCommon;
+// function mostFrequent(arr) {
+//     const freqMap = {}
+//     let maxCount = 0
+//     let mostCommon;
 
-    for(let i of arr) {
-        freqMap[i] = (freqMap[i] || 0) + 1;
+//     for(let i of arr) {
+//         freqMap[i] = (freqMap[i] || 0) + 1;
 
-        if(freqMap[i] > maxCount) {
-            maxCount = freqMap[i]
-            mostCommon = i
+//         if(freqMap[i] > maxCount) {
+//             maxCount = freqMap[i]
+//             mostCommon = i
+//         }
+//     }
+
+//     return mostCommon
+// }
+
+// console.log(mostFrequent([1, 3, 1, 3, 3, 2, 1]));
+
+///////////////////////////////////////////////////////////////////////
+
+// Two sum
+
+function twoSum(arr, target) {
+
+    const map = new Map()
+
+    for(let i=0; i<arr.length; i++) {
+        const compliment = target - arr[i]
+
+        if(map.has(compliment)) {
+            return [i, map.get(compliment)]
+        } else {
+            map.set(arr[i], i)
         }
-    }
 
-    return mostCommon
+    }
 }
 
-console.log(mostFrequent([1, 3, 1, 3, 3, 2, 1]));
+console.log(twoSum([2, 7, 11, 15], 9));
