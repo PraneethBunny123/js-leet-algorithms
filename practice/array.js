@@ -57,3 +57,39 @@ let m = 3
 let n = 3
 
 console.log(mergeSortedArrays(num1, num2, m, m))
+
+///////////////////////////////////////////////////////////
+
+// walmart karat
+
+// You are given an array of student ID and subject pairs. Your task is to:
+
+// Generate all unique pairs of student IDs (e.g., "5,4", "5,3", etc.)
+
+// For each pair, check if the two students have a common course
+
+// Return a mapping where each key is a pair (as a string, e.g., "5,4") and the value is the common subject (or an empty string if none)
+
+function pairUp(arr) {
+    const subMap = {}
+
+    for(let [id, subject] of arr) {
+        if(!subMap[id]) {
+            subMap[id] = []
+        }
+        subMap[id].push(subject)
+    }
+    return subMap
+}
+
+const arr = [
+    ["5", "maths"],
+    ["3", "english"],
+    ["7", "maths"],
+    ["4", "maths"],
+    ["3", "physics"],
+    ["5", "social"]
+];
+
+console.log(pairUp(arr))
+
