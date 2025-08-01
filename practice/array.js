@@ -21,7 +21,7 @@ function productExceptSelf(nums) {
 }
 
 let nums = [4,2,3,4]
-console.log(productExceptSelf(nums))
+// console.log(productExceptSelf(nums))
 
 ///////////////////////////////////////////////////////////////////
 
@@ -56,7 +56,7 @@ let num2 = [2,5,6]
 let m = 3
 let n = 3
 
-console.log(mergeSortedArrays(num1, num2, m, m))
+// console.log(mergeSortedArrays(num1, num2, m, m))
 
 ///////////////////////////////////////////////////////////
 
@@ -79,7 +79,32 @@ function pairUp(arr) {
         }
         subMap[id].push(subject)
     }
-    return subMap
+
+
+    const ids = Object.keys(subMap)
+    let res = {}
+
+    for(let i=0; i<ids.length; i++) {
+        for(let j=i+1; j<ids.length; j++) {
+            const id1 = ids[i]
+            const id2 = ids[j]
+            const pairUps = `${id1}, ${id2}`
+
+            // console.log(pairUps)
+
+            const subject1 = subMap[id1]
+            const subject2 = subMap[id2]
+
+            // console.log(subject1, subject2)
+            const common = subject1.filter(sub => subject2.includes(sub))
+            console.log(common)
+
+            res[pairUps] = common
+        }
+    }
+    
+
+    return res
 }
 
 const arr = [
